@@ -21,7 +21,7 @@ This project is a flower species classifier that uses a Random Forest classifier
 Before running the application, make sure you have the following prerequisites installed:
 
 - Python 3.10 or later
-- Required Python libraries (installed via `requirement.txt`):
+- Required Python libraries (installed via `requirements.txt`):
   - numpy
   - pandas
   - scikit-learn
@@ -34,7 +34,7 @@ To set up the Flower Species Classifier, follow these steps:
 1. Clone this repository to your local machine:
 
 ```bash
-   git clone https://github.com/yourusername/flower-species-classifier.git
+   git clone https://github.com/Akiff-hplusstree/flower-species-classifier.git
    cd flower-species-classifier
 ```
 2. Create a virtual environment (recommended):
@@ -47,7 +47,7 @@ To set up the Flower Species Classifier, follow these steps:
 3. Install the required Python libraries:
 
 ```bash
-    pip install -r requirement.txt
+    pip install --no-cache-dir -r requirements.txt
 ```
 
 ## Usage
