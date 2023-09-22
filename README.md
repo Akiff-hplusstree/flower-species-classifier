@@ -10,7 +10,6 @@ A Python application that uses a Random Forest classifier to predict the species
 - [Usage](#usage)
 - [Examples](#examples)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Description
 
