@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  flower-species-classifier:
+    build:
+      context: .
+    image: flower-classifier:latest
+    container_name: flower-classifier
+    ports:
+      - "5000:5000"  # Adjust the port as needed
+    volumes:
+      - ./data:/app/data  # Mount a volume if needed
+    command: ["python3", "main.py"]
+
+
