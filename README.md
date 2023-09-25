@@ -51,12 +51,69 @@ To set up the Flower Species Classifier, follow these steps:
 
 ## Usage
 
-To use the Flower Species Classifier, run the main.py script as follows:
+To use the Flower Species Classifier, run the `main.py` script as follows:
 
 ```bash
 python3 main.py
 ```
-The script will prompt you to enter the sepal and petal measurements for a flower. After entering the measurements, it will predict the flower species and display the result.
+
+The script will create a `rf_model.pkl` file which will store the trained model. The script will prompt you to enter the sepal and petal measurements for a flower. After entering the measurements, it will predict the flower species and display the result.
+
+You can also use the classifier with docker and docker-compose. Remember to first run the `main.py` in order to store the trained model.
+
+### Using Docker:
+
+To run the Flower Species Classifier using Docker, follow these steps:
+
+1. Build and run the Docker image for the application using the provided Dockerfile:
+
+```bash
+docker build -t flower-classifier .
+```
+
+2. Run the Docker container:
+
+```bash
+docker run -it --rm flower-classifier
+```
+
+This command will start the application inside a Docker container. Follow the prompts to enter the sepal and petal measurements for a flower, and it will predict the flower species.
+
+### Using Docker Compose
+
+Alternatively, you can use Docker Compose to simplify the deployment:
+
+1. Make sure you have Docker Compose installed on your system. If not, Install it with the following command:
+
+```bash
+# Install Docker Compose on Linux
+sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+# Apply executable permissions
+sudo chmod +x /usr/local/bin/docker-compose
+```
+2. Use the following docker-compose.yml configuration:
+
+```yaml
+version: '3'
+
+services:
+  flower-species-classifier:
+    build:
+      context: .
+    image: flower-classifier:latest
+    container_name: flower-classifier
+    command: ["python3", "main.py"]
+```
+
+Run the Docker Compose command to build and start the application:
+
+```bash
+docker-compose run flower-species-classifier
+```
+This will create and run the Flower Species Classifier container.
+
+Both methods will allow you to interact with the Flower Species Classifier using Docker, making it easy to use and deploy in a containerized environment.
 
 ## Examples
 
